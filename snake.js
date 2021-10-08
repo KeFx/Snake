@@ -2,7 +2,12 @@
 
 /** @type {HTMLCanvasElement} */
 
-function startGame(){
-    const pg = new Playground(300, 300, 'snake');
-    pg.start()
+function startGame(rows, cols, baseUnitWidth){
+    const pg = new Playground(rows, cols, baseUnitWidth, 'snake');
+    document.getElementById('snake').style.cssText = `width: ${cols*baseUnitWidth}px;
+                                                    height: ${rows*baseUnitWidth}px;
+                                                    border-style: solid;
+                                                    border-width: 1em;
+                                                    border-color: lightskyblue;`
+    pg.start();
 }
